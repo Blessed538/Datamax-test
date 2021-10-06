@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" :data="values">
-      <!-- <template v-slot:[data]="{pageNumber}"></template> -->
-    </HelloWorld>
+    <HelloWorld msg="Welcome to Your Vue.js App" :data="values" />
   </div>
 </template>
 
@@ -18,12 +16,15 @@ export default {
     return {
       values: [],
       errors: '',
+      currrentPage: 1,
     };
   },
 
   mounted() {
     console.log(this.values);
-    fetch('https://www.anapioficeandfire.com/api/books/')
+    fetch(
+      `https://www.anapioficeandfire.com/api/books/?page=${this.currrentPage}&pageSize=12`
+    )
       .then((res) => res.json())
       .then((result) => (this.values = result))
       .catch((error) => {

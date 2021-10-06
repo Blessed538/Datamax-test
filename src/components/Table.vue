@@ -13,7 +13,6 @@
       </div>
       <table>
         <tr>
-        
           <th>Name</th>
           <th>ISBN</th>
           <th>Authors</th>
@@ -34,21 +33,22 @@
       <div class="footer">
         <p class="entries">Showing 1 to 10 of 57 entires</p>
         <div class="list">
-          <button class="pagination-button" >
+          <button
+            class="pagination-button"
+            @click="currentPage = currentPage - 1"
+          >
             Previous
           </button>
-          <!-- <span class="list" v-for="(item, index) in new Array(2)" :key="index">
-            <button class="pagination-button" @click="pageNumber = index + 1">
-              {{ index + 1 }}
-            </button>
-          </span> -->
-          <button class="pagination-button">
+
+          <button
+            class="pagination-button"
+            @click="currentPage = currentPage + 1"
+          >
             Next
           </button>
         </div>
       </div>
     </div>
-    <slot name="data" :pageNumber="pageNumber" />
   </div>
 </template>
 
@@ -91,11 +91,6 @@ export default {
     },
     formatAuthor(value) {
       return value.toString();
-    },
-    pagination() {
-     fetch(
-      'https://www.anapioficeandfire.com/api/books/?page={pageNumber}&pageSize=12'
-    )
     },
   },
 };
