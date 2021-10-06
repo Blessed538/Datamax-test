@@ -1,24 +1,13 @@
 # ice-fire
+### What does this app do app do?
+- It fetches data from the ice and fire api.
+- it displays the data on the table component using a table.
+- the search bar searches using the book name.
+- the book part of the api does not return total number of pages,pagesize and currentpage.
 
-## Project setup
-```
-yarn install
-```
+### How can this be tested?
+- git clone this repository
+- git checkout master
+- npm install
+- npm run serve
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
